@@ -18,7 +18,7 @@ function ringtone(title) {
 function ChatWithGpt(textMessage) {
   const options = {
     method: 'POST',
-    url: 'https://cheapest-gpt-4-turbo-gpt-4-vision-chatgpt-openai-ai-api.p.rapidapi.com/v1/chat/completions'',
+    url: 'https://cheapest-gpt-4-turbo-gpt-4-vision-chatgpt-openai-ai-api.p.rapidapi.com/v1/chat/completions',
     headers: {
       'content-type': 'application/json',
       'X-RapidAPI-Key': 'a11d1a8c29msh929304d0f51084bp13c73ejsn183f8235d6da',
