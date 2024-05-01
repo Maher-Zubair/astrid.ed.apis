@@ -18,7 +18,7 @@ app.get('/search', async (req, res) => {
     }
 });
 
-app.get('/api/search', async (req, res) => {
+app.get('/yt-search', async (req, res) => {
   const query = req.query.query;
   try {
     const videos = await youtube.search(query, { limit: 10 });
