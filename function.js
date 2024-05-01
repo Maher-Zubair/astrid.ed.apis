@@ -45,4 +45,4 @@ async function ChatWithGpt(textMessage) {
   }
 }
 
-module.exports = ringtone, chatWithGpt;
+module.exports = ringtone, ChatWithGpt;
