@@ -3,10 +3,8 @@ const ringtone = require('./function');
 const youtube = require('youtube-sr');
 const ChatWithGpt = require('./function');
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-
 app.post('/gpt-api', async (req, res) => {
   const textMessage = req.body.textMessage;
   try {
@@ -60,6 +58,6 @@ app.get('/yt-search', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+app.listen(300, () => {
+   console.log('Server listening on port 3000');
+ });
