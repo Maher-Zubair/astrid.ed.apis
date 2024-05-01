@@ -15,4 +15,34 @@ function ringtone(title) {
     })
 }
 
-module.exports = ringtone;
+function ChatWithGpt(textMessage) {
+  const options = {
+    method: 'POST',
+    url: 'https://cheapest-gpt-4-turbo-gpt-4-vision-chatgpt-openai-ai-api.p.rapidapi.com/v1/chat/completions'',
+    headers: {
+      'content-type': 'application/json',
+      'X-RapidAPI-Key': 'a11d1a8c29msh929304d0f51084bp13c73ejsn183f8235d6da',
+      'X-RapidAPI-Host': 'https://cheapest-gpt-4-turbo-gpt-4-vision-chatgpt-openai-ai-api.p.rapidapi.com'
+    },
+    data: {
+      messages: [
+        {
+          role: 'user',
+          content: textMessage
+        }
+      ],
+      model: 'gpt-4-turbo-preview',
+      max_tokens: 200,
+      temperature: 0.9
+    }
+  };
+
+  try {
+    const response = await axios.request(options);
+    return response.data.choices[0].message.content;
+  } catch (error) {
+    return error;
+  }
+}
+
+module.exports = ringtone, chatWithGpt;
