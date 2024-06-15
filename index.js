@@ -1,29 +1,7 @@
 const express = require('express');
-const ringtone = require('./function'); 
-const youtube = require('youtube-sr');
-const ChatWithGpt = require('./function');
+const ringtone = require('.//scraper/function'); 
 const app = express();
 
-app.use(express.json());
-app.post('/gpt-api', async (req, res) => {
-  const textMessage = req.body.textMessage;
-  try {
-    const response = await ChatWithGpt(textMessage);
-    res.json({
-      status: 200,
-      owner: "Diegoson",
-      result: response,
-      example: `Hello: ${response}`
-    });
-  } catch (error) {
-    res.status(500).json({
-      status: 500,
-      owner: "Diegoson",
-      error: error,
-      example: `Hello: ${error}`
-    });
-  }
-});
                             
 app.get('/search', async (req, res) => {
     const query = req.query.q;
@@ -36,26 +14,6 @@ app.get('/search', async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Internal Server Error' });
     }
-});
-
-app.get('/yt-search', async (req, res) => {
-  const query = req.query.query;
-  try {
-    const videos = await youtube.search(query, { limit: 10 });
-    res.json({
-      status: 200,
-      owner: "Diegoson",
-      result: {
-        videos
-      }
-    });
-  } catch (err) {
-    res.status(500).json({
-      status: 500,
-      owner: "Diegoson",
-      error: err.message
-    });
-  }
 });
 
 app.listen(300, () => {
