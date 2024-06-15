@@ -1,5 +1,5 @@
 {
-  "name": "nova-api",
+  "name": "astrid-api",
   "version": "1.0.0",
   "description": "made by diego",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "cheerio": "^1.0.0-rc.10",
-    "youtube-sr": "^4.3.11",
+    "playwright": "*"
     "express": "latest"
   }
 }
