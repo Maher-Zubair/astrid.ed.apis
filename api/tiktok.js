@@ -1,5 +1,5 @@
 const express = require('express');
-const { scrapeTikTok } = require('../scraper/scrapper');
+const { scrapeTikTok } = require('../scraper/tik');
 
 const app = express();
 const port = 3000;
