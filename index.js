@@ -1,5 +1,5 @@
 const express = require('express');
-const ringtone = require('.//scraper/function'); 
+const ringtone = require('./scraper/function'); 
 const app = express();
 
                             
